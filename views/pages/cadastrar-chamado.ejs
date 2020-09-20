@@ -1,0 +1,166 @@
+<body style="display: block;">
+    <!-- seção informatica Admin -->
+    <link rel="stylesheet" href="css/page-funcionario.css">
+
+    <div class="tablink">Cadastrar</div>
+
+    <section class="contact-area section-gap" id="contact">
+        <div class="container form-alterar">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content col-lg-8">
+                    <div class="text-center" style="margin-bottom: 100px;"><img id="img_sex" class="person-img" src="https://visualpharm.com/assets/217/Life%20Cycle-595b40b75ba036ed117d9ef0.svg"></div>
+                    <div class="title text-center">
+                        <h1 class="mb-10 title-color">Dados do Chamado</h1>
+                    </div>
+                </div>
+            </div>
+            <form action="/cadastros/chamado" method="post" id="formCadastro" name="formCadastro">
+                <input name="header" type="hidden" value="<%= header %>">
+                <div class="row line-one">
+                    <div class="col-lg-6 col-md-6">
+                        <label for="titulo">Título chamado:</label>
+                        <input name="titulo" type="text" class="form-control" id="titulo" placeholder="Insira o titulo do chamado">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <label for="cep">Tipo Chamado:</label>
+                        <select name="tipo" class="form-control" id="tipoChamado">
+                            <option value="0">--SELECIONE--</option>
+                            <option value="1">Dúvida</option>
+                            <option value="2">Melhoria</option>
+                            <option value="3">Problema</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row line-two">
+                    <div class="col-lg-12 col-md-12 ">
+                        <label for="descricao">Descrição:</label>
+                        <textarea name="descricao" class="form-control" rows="3" id="comment" placeholder="Insira aqui a descrição..."></textarea>
+                    </div>
+                </div>
+                <div class="row line-two">
+                    <div class="col-lg-3 col-md-4 mb-5">
+                        <label for="descricao">Cliente:</label>
+                        <input type="text" class="form-control" id="cliente" onkeydown="javascript: fMasc( this, mCPF );" placeholder="Insira o cpf do cliente">
+                        <div class="text-center"><label id="erro" for="descricao">.</label></div>
+                    </div>
+                    <div class="col-lg-3 col-md-2 mb-5">
+                        <div class="text-center"><label for="descricao">.</label></div>
+                        <div class="btn-editar"><a id="btnPesquisar" class="btn btn-primary mb-3">Pesquisar Cliente</a></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb-5">
+                        <div class="text-center"><label for="descricao">.</label></div>
+                        <div class="btn-editar"><a id="btnAdicionar" class="btn btn-primary mb-3">Adicionar
+                                Cliente</a></div>
+                    </div>
+                </div>
+                <div id="customer" style="display: none">
+                    <div class="row line-one">
+                        <input name="id-cliente" type="hidden" id="id-cliente">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="nome">Nome:</label>
+                            <input name="nome" type="text" class="form-control" id="nome" placeholder="Insira o titulo do chamado">
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="sobrenome">Sobrenome:</label>
+                            <input name="sobrenome" type="text" class="form-control" id="sobrenome" placeholder="Insira o titulo do chamado">
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="cpf">CPF:</label>
+                            <input name="cpf" type="text" class="form-control" id="cpf" onkeydown="javascript: fMasc( this, mCPF );" placeholder="Insira o titulo do chamado">
+                        </div>
+                    </div>
+                    <div class="row line-two">
+                        <div class="col-lg-4 col-md-4 ">
+                            <label>Sexo:</label><br>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input name="sexo" id="M" type="checkbox" class="form-check-input" value="1">Masculino
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input name="sexo" id="F" type="checkbox" class="form-check-input" value="2">Feminino
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="data-nascimento">Data-Nascimento:</label>
+                            <input name="data-nascimento" type="text" class="form-control" id="data-nascimento">
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="cep">CEP:</label>
+                            <input name="cep" type="text" onkeydown="javascript: fMasc( this, mCEP );" class="form-control" id="cep">
+                            <div class="text-center"><label id="erroCEP" for="descricao"></label></div>
+                        </div>
+                    </div>
+                    <div class="row line-three">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="logradouro">Logradouro:</label>
+                            <input name="logradouro" type="text" class="form-control" id="logradouro">
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="numero">Numero:</label>
+                            <input name="numero" type="number" class="form-control" id="numero">
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="complemento">Complemento:</label>
+                            <input name="complemento" type="text" class="form-control" id="complemento">
+                        </div>
+                    </div>
+                    <div class="row line-three">
+                        <div class="col-lg-4 col-md-4">
+                            <label for="bairro">Bairro:</label>
+                            <input name="bairro" type="text" class="form-control" id="bairro">
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="cidade">Cidade:</label>
+                            <input name="cidade" type="text" class="form-control" id="cidade">
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <label for="cep">Estado:</label>
+                            <select name="estados-brasil" class="form-control" id="estado">
+                                <option value="">--SELECIONE--</option>
+                                <option value="SP">SP</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row line-four">
+                        <label>.</label>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="text-center"><label for="descricao">.</label></div>
+                    <div class="btn-editar"><span id="btnFinalizar" class="btn btn-success mb-3">Cadastrar
+                            Chamado</span></div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- fim area caracteristica -->
+    <script src="js/consultar-cliente.js"></script>

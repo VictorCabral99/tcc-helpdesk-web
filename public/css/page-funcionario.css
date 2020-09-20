@@ -1,0 +1,169 @@
+.person-img{
+    width: 10em;
+    position: absolute;
+    top: -5em;
+    left: 50%;
+    margin-left: -5em;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: white;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: -50px;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+	margin-top:10px;
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+
+/*espaçamento*/
+
+select#cargo {
+    margin-top: 8px;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: none;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.60rem + 2px);
+}
+
+button.primary-btn.mt-20 {
+    font-weight: bold;
+}
+
+
+.p1-gradient-bg, .primary-btn, .header-btn, .testimonial-area .overlay-bg, .single-service:hover, .about-right .overlay-bg {
+    background-image: -moz-linear-gradient(0deg, #696969 0%, #696969 100%);
+    background-image: -webkit-linear-gradient(0deg, #696969 0%, #696969 100%);
+    background-image: -ms-linear-gradient(0deg, #696969 0%, #696969 100%);
+}
+
+.title-color{
+	color: #ffffff
+}
+
+.title-status{
+  color:#ffffff;
+}
+
+.container.form-cadastro {
+    background-color: #62bdfc;
+}
+
+/*css cadastrar funcionario*/
+.btn-cadastrar {
+    text-align: center!important;
+    width: 30%;
+    margin-left: 35%;
+}
+form#formCadastro {
+    color: #fff;
+}
+
+.login_modal_footer {
+    background: #00FF00 !important;
+    color: #fff;
+}
+
+/*css alterar funcionarios*/
+.container.form-alterar {
+    background-color: #62bdfc;
+    color:#fff;
+}
+
+.button-config{
+    text-align: center;
+}
+
+a.btn.btn-primary.btn-consult {
+     width: 10%;
+}
+
+.btn-editar {
+    text-align: center;
+}
+
+.row.line-one{
+font-size: 18px;
+text-align: left;
+margin-top: 30px;
+}
+
+.row.line-two{
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.row.line-three{
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.row.line-four{
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.row.line-five{
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.row.line-six{
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.row.line-seven{
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+
+.read-camp{
+    padding: 0px 10px 0px 10px;
+    border: 1px solid #fff;
+    color: #555;
+    background: #ffffff;
+    border-radius: 3px;
+}

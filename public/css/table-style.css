@@ -1,0 +1,277 @@
+th { 
+  background: #62bdfc; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+td {
+    text-align: center!important;
+}
+
+    button#mobile-nav-toggle {
+    width: 100px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+
+    border-radius: 10px;
+}
+
+.btn-conf-admin{
+    width: 30%;
+}
+
+th.th-1.sorting_asc {
+    width: 25%!important;
+}
+th.th-2.sorting{
+    width: 15%!important;
+}
+th.th-3.sorting {
+    width: 15%!important;
+}
+th.th-4.sorting_asc {
+    width: 45%!important;
+}
+
+
+/*style chamados table*/
+
+
+th.tc-1.sorting_asc{
+    width:5%!important
+}
+
+th.tc-2.sorting{
+    width:5%!important;
+}
+
+th.tc-3.sorting{
+    width:5%!important;
+}
+
+th.tc-4.sorting{
+    width:5%!important;
+}
+
+th.tc-5.sorting{
+    width:5%!important;
+}
+th.tc-6.sorting{
+    width:16%!important;
+}
+th.tc-7.sorting{
+    width:20%!important;
+}
+th.tc-8.sorting{
+    width: 40%!important;
+}
+
+/*ADM style*/
+
+
+
+section.feature-area.section-gap.admin-home {
+    background: url(../images/admin.jpg);
+    background-size: cover;
+    margin-top: 60px;
+    padding-bottom:300px;
+}
+
+h1.mb-10.title-adm{
+    color:#49a0d8;
+}
+
+p.text-adm.mb-5{
+    color:#FFFFFF;
+}
+
+img.img-fluid.adm-icon-1 {
+height: 55%;
+}
+
+img.img-fluid.adm-icon-2 {
+    height: 45%;
+}
+
+img.img-fluid.adm-icon-3 {
+    height: 45%;
+    
+}
+
+img.img-fluid.adm-icon-4 {
+    height: 45%;
+    
+}
+
+
+
+
+
+
+
+
+
+/*Gerente style*/
+
+section.feature-area.section-gap.gerente-home {
+    background: url(../images/gerente.jpg);
+    background-size: cover;
+    margin-top: 60px;
+    padding-bottom:300px;
+}
+
+h1.mb-10.title-gerente{
+    color:#49a0d8;
+}
+
+img.img-fluid.gerente-icon-1 {
+    height: 70%;
+}
+
+img.img-fluid.gerente-icon-2 {
+    height: 40%;
+}
+
+img.img-fluid.gerente-icon-3 {
+    height: 45%;
+<<<<<<< HEAD
+=======
+}
+
+
+
+/*analista 2 style*/
+
+section.feature-area.section-gap.analist2-home {
+    background: url(../images/analist2.jpg);
+    background-size: cover;
+    margin-top: 60px;
+    padding-bottom:450px;
+}
+
+h1.mb-10.title-gerente{
+    color:#49a0d8;
+
+}
+
+p.text-analist2.mb-5{
+    color: #000000;
+}
+
+img.img-fluid.analist2-icon-1 {
+    height: 20%;
+    margin-bottom: 130px;
+}
+
+img.img-fluid.analist2-icon-2 {
+    height: 15%;
+    margin-bottom: 130px;
+}
+
+
+img.img-fluid.analist2-icon-3 {
+    width: 45%;
+}
+
+
+/*analista 1 style*/
+
+section.feature-area.section-gap.analist1-home {
+    background: url(../images/analist-1.jpg) 110px no-repeat;
+    background-size: cover;
+    margin-top: 60px;
+    padding-bottom:450px;
+}
+
+.row.analist1{
+margin-top: 200px
+}
+
+h1.mb-10.title-gerente{
+    color:#49a0d8;
+
+}
+
+p.text-analist2.mb-5{
+    color: #000000;
+}
+
+img.img-fluid.analist2-icon-1 {
+    height: 20%;
+ 
+}
+
+img.img-fluid.analist2-icon-2 {
+    height: 15%;
+
+}
+
+
+img.img-fluid.analist2-icon-3 {
+    width: 45%;
+    height: 20%;
+}
+
+
+/*suporte ao cliente*/
+
+
+section.feature-area.section-gap.suporte-cliente-home {
+    background: url(../images/service-bg.jpg) -550px no-repeat;
+    background-size: cover;
+    margin-top: 60px;
+    padding-bottom:450px;
+}
+
+.row.analist1{
+margin-top: 200px
+}
+
+h1.mb-10.title-gerente{
+    color:#49a0d8;
+
+
+}
+
+p.text-analist2.mb-5{
+    color: #000000;
+}
+
+img.img-fluid.analist2-icon-1 {
+    height: 20%;
+ 
+}
+
+img.img-fluid.analist2-icon-2 {
+    height: 15%;
+
+}
+
+
+img.img-fluid.analist2-icon-3 {
+    width: 45%;
+    height: 40%;
+}
+
+
+/*duvidas*/
+
+
+section.feature-area.section-gap.duvidas-home {
+    background: url(../images/slide-sup-cliente.jpg) center no-repeat;
+    background-size: cover;
+    margin-top: 60px;
+    padding-bottom:50px;
+}
+
+.btn-link {
+    font-weight: bold;
+    color: #49a0d8;
+    background-color: transparent;
+>>>>>>> 6e282bfbebc8130899289bc196190001698365f4
+}

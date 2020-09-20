@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="css/page-funcionario.css">
+<div class="tablink">Cadastrar</div>
+
+
+<section class="contact-area section-gap" id="contact">
+    <div class="container form-cadastro">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content col-lg-8">
+                <div class="text-center" style="margin-bottom: 100px;"><img id="img_sex" class="person-img" src="https://visualpharm.com/assets/217/Life%20Cycle-595b40b75ba036ed117d9ef0.svg"></div>
+                <div class="title text-center">
+                    <h1 class="mb-10 title-color">Dados do Funcionário</h1>
+                </div>
+            </div>
+        </div>
+        <form action="/cadastros/funcionario" method="post" id="formCadastro" name="formCadastro">
+            <input name="header" type="hidden" value="<%= header %>">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input name="senha" type="password" class="form-control" id="password" placeholder="********">
+            </div>
+            <div class="form-group">
+                <label for="cargo">Perfil</label>
+                <select name="cargo" class="form-control" id="cargo">
+                    <option value="0">--SELECIONE--</option>
+                    <% if(header === "admin") {%>
+                    <option value="1">Administrador</option>
+                    <% } %>
+                    <option value="2">Gerente</option>
+                    <option value="3">Analista Nvl 1</option>
+                    <option value="4">Analista Nvl 2</option>
+                </select>
+            </div>
+            <div class="btn-cadastrar"><button onsubmit="submit()" class="btn btn-primary">Cadastrar</button></div>
+        </form>
+    </div>
+</section>
+<% if(alert === "sucess") { %>
+    <!--modal -->
+    <div class="modal fade" id="sucess-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header login_modal_header-succes">
+                  
+                    <h2 class="modal-title" id="myModalLabel">Sucesso</h2>
+                </div>
+                <div class="modal-body login-modal">
+                    <div id="message">Funcionario Inserido com sucesso !</div>
+                    <button data-dismiss="modal" aria-hidden="true" class="btn btn-succes modal-ok">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="css/modal-bootstrap.min.js"></script>
+    <script>    
+        $("#sucess-modal").modal("show");
+    </script>
+
+<% } else if (alert === "error") { %>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header login_modal_header-error">
+                    <h2 class="modal-title" id="myModalLabel">Error</h2>
+                </div>
+                <div class="modal-body login-modal">
+                        <div id="message"><%= message %></div>
+                    <button data-dismiss="modal" aria-hidden="true" class="btn btn-danger modal-ok">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="css/modal-bootstrap.min.js"></script>
+    <script>
+        $("#error-modal").modal("show");
+    </script>
+<% } %>
+<script src="js/cadastrarFuncionario.js"></script>

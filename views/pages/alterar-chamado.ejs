@@ -1,0 +1,181 @@
+<body style="display: block;">
+    <!-- seção informatica Admin -->
+    <link rel="stylesheet" href="css/page-funcionario.css">
+
+    <div class="tablink">Editar</div>
+
+    <section class="contact-area section-gap" id="contact">
+        <div class="container form-alterar">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content col-lg-8">
+                    <div class="text-center" style="margin-bottom: 100px;"><img id="img_sex" class="person-img" src="https://visualpharm.com/assets/217/Life%20Cycle-595b40b75ba036ed117d9ef0.svg"></div>
+                    <div class="title text-center">
+                        <h1 class="mb-10 title-color">Dados do Chamado</h1>
+                    </div>
+                </div>
+            </div>
+            <form action="" method="post" id="formCadastro" name="formCadastro">
+                <input type="hidden" value="<%= chamados.id %>" id="call-id"> 
+                <input type="hidden" value="<%= header %>" id="h"> 
+                <div class="row line-one">
+                    <div class="col-lg-2 col-md-2">
+                        <label for="email">Id:</label><br>
+                        <label class="read-camp" for="id">
+                            <%= chamados.id %></label>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <label for="cargo">Título:</label><br>
+                        <label class="read-camp" for="id">
+                            <%= chamados.titulo %></label>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <label for="id">Descricao:</label><br>
+                        <label class="read-camp" for="id">
+                            <%= chamados.descricao %>
+                        </label>
+                    </div>
+
+
+                </div>
+                <hr>
+                <div class="row line-two">
+                    <div class="col-lg-2 col-md-2"></div>
+                    <div class="col-lg-4 col-md-4">
+                        <label for="cargo">Status:</label><br>
+                        <label class="read-camp" for="id">
+                            <%= status %></label>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <label for="id">Usuario Responsavel:</label><br>
+                        <label class="read-camp" for="id">
+                            <%= chamados.usuarioResponsavel.email %>
+                        </label>
+                    </div>
+                    <div class="col-lg-2 col-md-2"></div>
+                </div>
+
+                <div class="row line-two">
+                    <div class="col-lg-4 col-md-4 mb-5">
+                        <% if(header === "gerente") {%>
+                        <div class="btn-editar"><a href="/gerente-chamados" class="btn btn-primary mb-3" style="width:60%;">Voltar</a></div>
+                        <% } else if (header === "analist2") {%>
+                        <div class="btn-editar"><a href="/analist2-chamados" class="btn btn-primary mb-3" style="width:60%;">Voltar</a></div>
+                        <% } else {%>
+                        <div class="btn-editar"><a href="/analist1-chamados" class="btn btn-primary mb-3" style="width:60%;">Voltar</a></div>
+                        <% } %>
+                    </div>
+                    <div class="col-lg-4 col-md-4 mb-5">
+                        <div class="btn-editar"><span id="btnAlterar" class="btn btn-success mb-3" style="width:60%;">Alterar
+                                Status</button></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 mb-5">
+                        <div class="btn-editar"><span id="btnTransferir" class="btn btn-success mb-3" style="width:60%;">Trasferir
+                                Responsavel</a></div>
+                    </div>
+                </div>
+
+                <div style="display:none" id="alterar">
+                    <div class="row line-three">
+                        <div class="col-lg-3 col-md-4 text-center">Status: </div>
+                        <div class="col-lg-5 col-md-5 text-left">
+                        <select name="status" class="form-control" id="statusChamado">
+                            <option value="0">--SELECIONE--</option>
+                            <option value="1">Sucesso</option>
+                            <option value="2">Em Análise</option>
+                            <option value="3">Aguardando Retorno</option>
+                            <option value="4">Pendente</option>
+                        </select>
+                        </div>
+                        <span id="btnStatus" class="btn btn-success mb-3">
+                                Confirmar Status
+                            </span>
+                    </div>
+                    <div class="col-lg-3 col-md-3">.</div>
+                </div>
+
+                <div style="display:none" id="transferir">
+                    <table id="example" class="table table-striped table-bordered" style="color:black;">
+                        <thead>
+                            <tr>
+                                <th class="th-1">Email</th>
+                                <th class="th-2">Perfil</th>
+                                <th class="th-3">Acoes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="demo">
+                            <% for(i = 0; i < usuarios.length; i++){ %>
+                                <% let id = usuarios[i].id %>
+                                <% let email = usuarios[i].email %>
+                                <% let perfil = usuarios[i].perfil %>
+                                <% if(header === "gerente") {%>
+                                    <% if(usuarios[i].perfil !== 1) {%>
+                                        <% if(usuarios[i].status === 1) { %>
+                                        <tr>
+                                            <td><%= email %></td>
+                                            <%if (perfil === 1) { %>
+											    <td>Administrador</td>
+										    <% } else if (perfil === 2) { %>
+											    <td>Gerente</td>
+										    <% } else if (perfil === 3) { %>
+											    <td>Analista 1</td>
+										    <% } else if (perfil === 4) { %>
+											    <td>Analista 2</td>
+										    <% } %>
+                                            <td>
+                                                <a class='btn btn-primary mr-1' onclick='transferir("<%= id %>")' style='color: black;width: 50%;'><span class='lnr lnr-pencil'></span> Transferir</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    <% } %>
+                                <% } else if(header === "analist2") {%>
+                                    <% if(usuarios[i].perfil !== 1) {%>
+                                        <% if(usuarios[i].status === 1) { %>
+                                        <tr>
+                                            <td><%= email %></td>
+                                            <%if (perfil === 1) { %>
+											    <td>Administrador</td>
+										    <% } else if (perfil === 2) { %>
+											    <td>Gerente</td>
+										    <% } else if (perfil === 3) { %>
+											    <td>Analista 1</td>
+										    <% } else if (perfil === 4) { %>
+											    <td>Analista 2</td>
+										    <% } %>
+                                            <td>
+                                                <a class='btn btn-primary mr-1' onclick='transferir("<%= id %>")' style='color: black;width: 50%;'><span class='lnr lnr-pencil'></span> Transferir</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    <% } %>
+                                <% } else { %>
+                                    <% if(usuarios[i].perfil !== 1 && usuarios[i].perfil !== 2) {%>
+                                        <% if(usuarios[i].status === 1) { %>
+                                        <tr>
+                                            <td><%= email %></td>
+                                            <%if (perfil === 1) { %>
+											    <td>Administrador</td>
+										    <% } else if (perfil === 2) { %>
+											    <td>Gerente</td>
+										    <% } else if (perfil === 3) { %>
+											    <td>Analista 1</td>
+										    <% } else if (perfil === 4) { %>
+											    <td>Analista 2</td>
+										    <% } %>
+                                            <td>
+                                                <a class='btn btn-primary mr-1' onclick='transferir("<%= id %>")' style='color: black;width: 50%;'><span class='lnr lnr-pencil'></span> Transferir</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    <% } %>
+                                <% } %>
+                            <% } %>
+                        </tbody>
+                    </table>
+            </form>
+        </div>
+    </section>
+    <!-- fim area caracteristica -->
+</body>
+<script src="js/jquery.dataTables.funcionarios.js"></script>
+<script src="js/table-js.js"></script>
+<script src="js/alterar-chamado.js"></script>

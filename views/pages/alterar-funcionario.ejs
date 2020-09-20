@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="css/page-funcionario.css">
+
+<div class="tablink">Alterar</div>
+
+
+<section class="contact-area section-gap" id="contact">
+    <div class="container form-cadastro">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content col-lg-8">
+                <div class="text-center" style="margin-bottom: 100px;"><img id="img_sex" class="person-img" src="https://visualpharm.com/assets/217/Life%20Cycle-595b40b75ba036ed117d9ef0.svg"></div>
+                <div class="title text-center">
+                    <h1 class="mb-10 title-color">Dados do Funcionário</h1>
+                </div>
+            </div>
+        </div>
+        <form action="/edicao/funcionario" method="post" id="formEdicao" name="formEdicao">
+            <input name="id" type="hidden" value="<%= id %>"> 
+            <input name="header" type="hidden" value="<%= header %>">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input name="email" type="email" class="form-control" id="email" value="<%= usuario.email %>" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="cargo">Perfil</label>
+                <select name="cargo" class="form-control" id="cargo">
+                    <option value="0">--SELECIONE--</option>
+                    <% if(header === "admin") {%>
+                        <% if(perfil === 1) { %>
+                            <option value="1" selected>Administrador</option>
+                        <% } else { %>
+                            <option value="1">Administrador</option>
+                        <% } %>
+                    <% } %>
+                    <% if(perfil === 2) { %>
+                    <option value="2" selected>Gerente</option>
+                    <% } else { %>
+                    <option value="2">Gerente</option>
+                    <% } %>
+                    <% if(perfil === 3) { %>
+                    <option value="3" selected>Analista Nvl 1</option>
+                    <% } else { %>
+                    <option value="3">Analista Nvl 1</option>
+                    <% } %>
+                    <% if(perfil === 4) { %>
+                    <option value="4" selected>Analista Nvl 2</option>
+                    <% } else { %>
+                    <option value="4">Analista Nvl 2</option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Satus</label>
+                <select name="status" class="form-control" id="status">
+                    <option value="0">--SELECIONE--</option>
+                    <% if(status === 1) { %>
+                        <option value="1" selected>Ativo</option>
+                    <% } else { %>
+                        <option value="1">Ativo</option>
+                    <% } %>
+                    <% if(status === 2) { %>
+                        <option value="2" selected>Bloqueado</option>
+                    <% } else { %>
+                        <option value="2">Bloqueado</option>
+                    <% } %>
+                    <% if(status === 3) { %>
+                        <option value="3" selected>Cancelado</option>
+                    <% } else { %>
+                        <option value="3">Cancelado</option>
+                    <% } %>
+                    
+                    
+                </select>
+            </div>
+            <div class="btn-editar"><button onsubmit="submit()" class="btn btn-primary mb-3">Editar</button></div>
+        </form>
+    </div>
+</section>
+<script src="js/editarFuncionario.js"></script>

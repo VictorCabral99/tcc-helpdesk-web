@@ -1,0 +1,147 @@
+<link rel="stylesheet" href="css/page-funcionario.css">
+
+<div class="tablink">Consultar</div>
+
+<section class="contact-area section-gap" id="contact">
+    <div class="container form-alterar">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content col-lg-8">
+                <div class="text-center" style="margin-bottom: 100px;"><img id="img_sex" class="person-img" src="https://visualpharm.com/assets/217/Life%20Cycle-595b40b75ba036ed117d9ef0.svg"></div>
+                <div class="title text-center">
+                    <h1 class="mb-10 title-color">Dados do Chamado</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row line-one">
+            <div class="col-lg-4 col-md-6">
+                <label for="email">Id:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.id %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label class="form-check-label" for="status">Nome Cliente:</label>
+                <label class="read-camp" class="form-check-label" for="status">
+                    <%= chamados.cliente.nome %>
+                    <%= chamados.cliente.sobrenome %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="data">CPF:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.documento %></label>
+            </div>
+        </div>
+        <div class="row line-two">
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">CEP:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.cep %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Logradouro:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.logradouro %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">Numero:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.numero %></label>
+            </div>
+        </div>
+        <hr>
+        <div class="row line-three">
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Complemento:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.complemento %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">Bairro:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.bairro %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Cidade:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.cidade %></label>
+            </div>
+        </div>
+        <div class="row line-four">
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">Estado:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.cliente.estado %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Sexo:</label>
+                <label class="read-camp" for="id">
+                    <%= sexo %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">Status:</label>
+                <label class="read-camp" for="id">
+                    <%= status %></label>
+            </div>
+        </div>
+        <hr>
+        <div class="row line-five">
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Tipo:</label>
+                <label class="read-camp" for="id">
+                    <%= tipo %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">Usuario Criador:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.usuarioCriador.email %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Usuario Responsável:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.usuarioResponsavel.email %></label>
+            </div>
+        </div>
+        <div class="row line-six">
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">Título:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.titulo %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Descricao:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.descricao %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="cargo">Data Criação:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.dataCriacao %></label>
+            </div>
+        </div>
+        <div class="row line-seven">
+            <div class="col-lg-4 col-md-4">
+
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <label for="id">Data Finalização:</label>
+                <label class="read-camp" for="id">
+                    <%= chamados.dataFinalizacao %></label>
+            </div>
+            <div class="col-lg-4 col-md-4">
+            </div>
+        </div>
+        <div class="row button-config">
+<<<<<<< HEAD:views/pages/consultarChamado.ejs
+            <div class="col-12"><a href="/gerente-employee" class="btn btn-primary btn-consult mb-3">Voltar</a></div>
+=======
+            <% if(header === "gerente") {%>
+                <div class="col-12"><a href="/gerente-chamados" class="btn btn-primary btn-consult mb-3">Voltar</a></div>
+            <% } else if (header === "analist2") {%>
+                <div class="col-12"><a href="/analist2-chamados" class="btn btn-primary btn-consult mb-3">Voltar</a></div>
+            <% } else {%>
+                <div class="col-12"><a href="/analist1-chamados" class="btn btn-primary btn-consult mb-3">Voltar</a></div>
+            <% } %>
+>>>>>>> 6e282bfbebc8130899289bc196190001698365f4:views/pages/consultar-chamado.ejs
+        </div>
+
+    </div>
+</section>

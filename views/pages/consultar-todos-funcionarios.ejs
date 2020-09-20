@@ -1,0 +1,129 @@
+<!-- Inicio area table -->
+<section class="feature-area section-gap" id="feature">
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="table-responsive">
+				<table id="example" class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th class="th-1">Email</th>
+							<th class="th-2">Perfil</th>
+							<th class="th-3">Status</th>
+							<th class="th-4">Acoes</th>
+						</tr>
+					</thead>
+					<tbody id="demo">
+						<% for(i = 0; i < usuarios.length; i++){ %>
+							<% let id = usuarios[i].id %>
+							<% let email = usuarios[i].email %>
+							<% let perfil = usuarios[i].perfil %>
+							<% let status = usuarios[i].status %>
+							<% if(header === "gerente") { %> 
+								<% if(usuarios[i].perfil !== 1) {%>
+									<tr>
+										<td><%= email %></td>
+										<%if (perfil === 1) { %>
+											<td>Administrador</td>
+										<% } else if (perfil === 2) { %>
+											<td>Gerente</td>
+										<% } else if (perfil === 3) { %>
+											<td>Analista 1</td>
+										<% } else if (perfil === 4) { %>
+											<td>Analista 2</td>
+										<% } %>
+																
+										<%if (status === 1) { %>
+											<td>Ativo</td>
+										<% } else if (status === 2) { %>
+											<td>Bloqueado</td>
+										<% } else if (status === 3) { %>
+											<td>Cancelado</td>
+										<% } %>
+		
+										<td>
+											<a onclick='consultar("<%= id %>")' class='btn btn-primary btn-conf-admin mr-1' style='color: #fff;'>
+											<span class='lnr lnr-magnifier'></span> Consultar</a>
+											<a onclick='alterar("<%= id %>")' class='btn btn-info btn-conf-admin mr-1' style='color: #fff;'>																		<span class='lnr lnr-pencil'></span> Editar</a>
+											<a data-toggle='modal' onclick='excluir("<%= id %>","<%= header %>")' href='#delete-modal' class='btn btn-danger btn-conf-admin' style='color: #fff;'>
+											<span class='lnr lnr-trash'></span> Deletar</a>
+										</td>
+									</tr>
+								<% } %>
+							<% } else {%>
+								<tr>
+									<td><%= email %></td>
+									<%if (perfil === 1) { %>
+										<td>Administrador</td>
+									<% } else if (perfil === 2) { %>
+										<td>Gerente</td>
+									<% } else if (perfil === 3) { %>
+										<td>Analista 1</td>
+									<% } else if (perfil === 4) { %>
+										<td>Analista 2</td>
+									<% } %>
+																
+									<%if (status === 1) { %>
+										<td>Ativo</td>
+									<% } else if (status === 2) { %>
+										<td>Bloqueado</td>
+									<% } else if (status === 3) { %>
+										<td>Cancelado</td>
+									<% } %>
+		
+									<td>
+										<a onclick='consultar("<%= id %>")' class='btn btn-primary btn-conf-admin mr-1' style='color: #fff;'>
+										<span class='lnr lnr-magnifier'></span> Consultar</a>
+										<a onclick='alterar("<%= id %>")' class='btn btn-info btn-conf-admin mr-1' style='color: #fff;'>																		<span class='lnr lnr-pencil'></span> Editar</a>
+										<a data-toggle='modal' onclick='excluir("<%= id %>","<%= header %>")' href='#delete-modal' class='btn btn-danger btn-conf-admin' style='color: #fff;'>
+										<span class='lnr lnr-trash'></span> Deletar</a>
+									</td>
+								</tr>
+							<% }%>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br>
+		<% if(header === "gerente") { %> 
+			<div class="row">
+				<div class="col-lg-12 text-center mt-10">
+					<a href="/gerente-cadastra-funcionario" class="btn btn-dark" id="add_button">Adicionar Funcionario</a>
+				</div>
+			</div>
+		<% } else {%>
+			<div class="row">
+				<div class="col-lg-12 text-center mt-10">
+					<a href="/adm-cadastra-funcionario" class="btn btn-dark" id="add_button">Adicionar Funcionario</a>
+				</div>
+			</div>
+		<% }%>	
+	</div>
+</section>
+<!-- Fim area table-->
+<!--modal -->
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header login_modal_header-succes">
+
+				<h2 class="modal-title" id="myModalLabel">Confirmar</h2>
+			</div>
+			<div class="modal-body login-modal">
+				<div id="message">Tem certeza que quer deletar este usuário?</div>
+				<div id="deletar">
+					<button data-dismiss="modal" aria-hidden="true" class="btn btn-succes modal-ok">Sim</button>
+					<button data-dismiss="modal" aria-hidden="true" class="btn btn-succes modal-ok">Não</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/jquery.dataTables.funcionarios.js"></script>
+<script src="js/table-js.js"></script>
+<% if(header === "gerente") { %> 
+	<script src="js/gerente-funcionario-page.js"></script>
+<% } else {%>
+	<script src="js/admin-page.js"></script>
+<% }%>

@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="css/page-funcionario.css">
+
+<div class="tablink">Consultar</div>
+
+<section class="contact-area section-gap" id="contact">
+    <div class="container form-alterar">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content col-lg-8">
+                <div class="text-center" style="margin-bottom: 100px;"><img id="img_sex" class="person-img" src="https://visualpharm.com/assets/217/Life%20Cycle-595b40b75ba036ed117d9ef0.svg"></div>
+                <div class="title text-center">
+                    <h1 class="mb-10 title-color">Dados do Funcionário</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row line-one" style="margin-left: 10px;">
+            <div style="margin-right: 10px;">
+                <label for="id">Id:</label>
+                <label class="read-camp" for="id">
+                    <%= usuario.id %></label>
+            </div>
+        </div>
+        <div class="row line-two" style="margin-left: 10px;">
+            <div style="margin-right: 5%;">
+                <label for="email">Email:</label>
+                <label class="read-camp" for="id">
+                    <%= usuario.email %></label>
+            </div>
+            <div style="margin-right: 5%;">
+                <label class="form-check-label" for="status">Status</label>
+                <label class="read-camp" class="form-check-label" for="status">
+                    <%= status %></label>
+            </div>
+            <div style="margin-right: 5%;">
+                <label for="cargo">Perfil:</label>
+                <label class="read-camp" for="id">
+                    <%= perfil %></label>
+            </div>
+            <div style="margin-right: 5%;">
+                <label for="data">Data Criação:</label>
+                <label class="read-camp" for="id">
+                    <%= usuario.dataCriacao %></label>
+            </div>
+        </div>
+        <div class="row button-config">
+<<<<<<< HEAD:views/pages/consultarFuncionario.ejs
+            <div class="col-12"><a href="/adm-employee" class="btn btn-primary btn-consult mb-3">Voltar</a></div>
+=======
+            <% if(header === "admin") {%>
+            <div class="col-12"><a href="/adm-employee" class="btn btn-primary btn-consult mb-3">Voltar</a></div>
+            <% } else if (header === "gerente") {%>
+            <div class="col-12"><a href="/gerente-employee" class="btn btn-primary btn-consult mb-3">Voltar</a></div>
+            <% } %>
+>>>>>>> 6e282bfbebc8130899289bc196190001698365f4:views/pages/consultar-funcionario.ejs
+        </div>
+    </div>
+</section>
